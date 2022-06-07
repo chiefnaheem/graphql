@@ -1,5 +1,5 @@
 import createError, { HttpError } from "http-errors";
-import express, { Request, Response, NextFunction } from "express";
+import express from "express";
 import cookieParser from "cookie-parser";
 import path from "path";
 import logger from "morgan";
@@ -8,7 +8,7 @@ import { graphqlHTTP } from "express-graphql";
 import { graphqlSchema } from "./schema/schema";
 import { connectDB, connectTestDB } from "./database/mongoConnect";
 import cors from "cors";
-import { profileEnd } from "console";
+
 
 // dotenv.config();
 const app = express();
@@ -24,9 +24,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// app.get("/", (req: Request, res: Response) => {
-//   res.redirect("/api/v1");
-// });
 
 console.log(process.env.NODE_ENV);
 
