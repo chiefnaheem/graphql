@@ -7,6 +7,7 @@ const clientSchema = new Schema({
     },
     email: {
         type: String,
+        unique: true,
     },
     phone: {
         type: String,
